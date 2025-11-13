@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-
+from fastapi.staticfiles import StaticFiles
 app = FastAPI()
+app.mount("", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+        return main.html
